@@ -40,7 +40,11 @@ function getWeather(data) {
 
       // current weather
       console.log(data.list[0].weather[0].main);
+      $("#weather").text(data.list[0].weather[0].main);
       // kelvin -> fahrenheit
       console.log(Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32));
+      $("#temp").text(
+        Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32)
+      );
     });
 }
