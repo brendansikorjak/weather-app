@@ -37,5 +37,10 @@ function getWeather(data) {
     })
     .then(function (data) {
       console.log(data);
+
+      // current weather
+      console.log(data.list[0].weather[0].main);
+      // kelvin -> fahrenheit
+      console.log(Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32));
     });
 }
