@@ -44,7 +44,7 @@ function getWeather(data) {
       // kelvin -> fahrenheit
       console.log(Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32));
       $("#temp").text(
-        Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32)
+        Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
       );
     });
 }
