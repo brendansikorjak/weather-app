@@ -46,5 +46,54 @@ function getWeather(data) {
       $("#temp").text(
         Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
       );
+
+      // 5-day weather
+      // day 1
+      console.log(data.list[8].weather[0].main);
+      console.log(Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32));
+      $("#weather-day1").text(data.list[8].weather[0].main);
+      $("#temp-day1").text(
+        Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+      );
+
+      // day 2
+      console.log(data.list[16].weather[0].main);
+      console.log(
+        Math.round(((data.list[16].main.temp - 273.15) * 9) / 5 + 32)
+      );
+      $("#weather-day2").text(data.list[16].weather[0].main);
+      $("#temp-day2").text(
+        Math.round(((data.list[16].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+      );
+
+      // day 3
+      console.log(data.list[24].weather[0].main);
+      console.log(
+        Math.round(((data.list[24].main.temp - 273.15) * 9) / 5 + 32)
+      );
+      $("#weather-day3").text(data.list[24].weather[0].main);
+      $("#temp-day3").text(
+        Math.round(((data.list[24].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+      );
+
+      // day 4
+      console.log(data.list[32].weather[0].main);
+      console.log(
+        Math.round(((data.list[32].main.temp - 273.15) * 9) / 5 + 32)
+      );
+      $("#weather-day4").text(data.list[32].weather[0].main);
+      $("#temp-day4").text(
+        Math.round(((data.list[32].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+      );
+
+      // day 5
+      console.log(data.list[39].weather[0].main);
+      console.log(
+        Math.round(((data.list[39].main.temp - 273.15) * 9) / 5 + 32)
+      );
+      $("#weather-day5").text(data.list[39].weather[0].main);
+      $("#temp-day5").text(
+        Math.round(((data.list[39].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+      );
     });
 }
