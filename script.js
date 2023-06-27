@@ -39,31 +39,80 @@ function getWeather(data) {
       console.log(data);
 
       // current weather
+      $("#city").text(
+        data.city.name + " " + dayjs(data.list[0].dt_text).format("M/D/YY")
+      );
       console.log(data.list[0].weather[0].main);
       $("#weather").text(data.list[0].weather[0].main);
       // kelvin -> fahrenheit
       console.log(Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32));
       $("#temp").text(
-        Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+        "Temp: " +
+          Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32) +
+          "ºF"
       );
+      console.log(
+        Math.round(((data.list[0].main.feels_like - 273.15) * 9) / 5 + 32)
+      );
+      $("#feels-like").text(
+        "Feels Like: " +
+          Math.round(((data.list[0].main.feels_like - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      // wind m/s -> mph
+      console.log(Math.round(data.list[0].wind.speed * 2.23694));
+      $("#wind").text(
+        "Wind: " + Math.round(data.list[0].wind.speed * 2.23694) + " MPH"
+      );
+      // humidity
+      console.log(data.list[0].main.humidity);
+      $("#humidity").text("Humidity: " + data.list[0].main.humidity + "%");
 
       // 5-day weather
+      $("#5-day").text("5 Day Forecast");
+
       // day 1
       console.log(data.list[8].weather[0].main);
       console.log(Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32));
+      $("#day1").text(dayjs(data.list[8].dt_txt).format("M/D/YY"));
       $("#weather-day1").text(data.list[8].weather[0].main);
       $("#temp-day1").text(
-        Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+        "Temp: " +
+          Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32) +
+          "ºF"
       );
+      $("#feels-like-day1").text(
+        "Feels Like: " +
+          Math.round(((data.list[8].main.feels_like - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#wind-day1").text(
+        "Wind: " + Math.round(data.list[8].wind.speed * 2.23694) + " MPH"
+      );
+      $("#humidity-day1").text("Humidity: " + data.list[8].main.humidity + "%");
 
       // day 2
       console.log(data.list[16].weather[0].main);
       console.log(
         Math.round(((data.list[16].main.temp - 273.15) * 9) / 5 + 32)
       );
+      $("#day2").text(dayjs(data.list[16].dt_txt).format("M/D/YY"));
       $("#weather-day2").text(data.list[16].weather[0].main);
       $("#temp-day2").text(
-        Math.round(((data.list[16].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+        "Temp: " +
+          Math.round(((data.list[16].main.temp - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#feels-like-day2").text(
+        "Feels Like: " +
+          Math.round(((data.list[16].main.feels_like - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#wind-day2").text(
+        "Wind: " + Math.round(data.list[16].wind.speed * 2.23694) + " MPH"
+      );
+      $("#humidity-day2").text(
+        "Humidity: " + data.list[16].main.humidity + "%"
       );
 
       // day 3
@@ -71,9 +120,23 @@ function getWeather(data) {
       console.log(
         Math.round(((data.list[24].main.temp - 273.15) * 9) / 5 + 32)
       );
+      $("#day3").text(dayjs(data.list[24].dt_txt).format("M/D/YY"));
       $("#weather-day3").text(data.list[24].weather[0].main);
       $("#temp-day3").text(
-        Math.round(((data.list[24].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+        "Temp: " +
+          Math.round(((data.list[24].main.temp - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#feels-like-day3").text(
+        "Feels Like: " +
+          Math.round(((data.list[24].main.feels_like - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#wind-day3").text(
+        "Wind: " + Math.round(data.list[24].wind.speed * 2.23694) + " MPH"
+      );
+      $("#humidity-day3").text(
+        "Humidity: " + data.list[24].main.humidity + "%"
       );
 
       // day 4
@@ -81,9 +144,23 @@ function getWeather(data) {
       console.log(
         Math.round(((data.list[32].main.temp - 273.15) * 9) / 5 + 32)
       );
+      $("#day4").text(dayjs(data.list[32].dt_txt).format("M/D/YY"));
       $("#weather-day4").text(data.list[32].weather[0].main);
       $("#temp-day4").text(
-        Math.round(((data.list[32].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+        "Temp: " +
+          Math.round(((data.list[32].main.temp - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#feels-like-day4").text(
+        "Feels Like: " +
+          Math.round(((data.list[32].main.feels_like - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#wind-day4").text(
+        "Wind: " + Math.round(data.list[32].wind.speed * 2.23694) + " MPH"
+      );
+      $("#humidity-day4").text(
+        "Humidity: " + data.list[32].main.humidity + "%"
       );
 
       // day 5
@@ -91,9 +168,23 @@ function getWeather(data) {
       console.log(
         Math.round(((data.list[39].main.temp - 273.15) * 9) / 5 + 32)
       );
+      $("#day5").text(dayjs(data.list[39].dt_txt).format("M/D/YY"));
       $("#weather-day5").text(data.list[39].weather[0].main);
       $("#temp-day5").text(
-        Math.round(((data.list[39].main.temp - 273.15) * 9) / 5 + 32) + "ºF"
+        "Temp: " +
+          Math.round(((data.list[39].main.temp - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#feels-like-day5").text(
+        "Feels Like: " +
+          Math.round(((data.list[39].main.feels_like - 273.15) * 9) / 5 + 32) +
+          "ºF"
+      );
+      $("#wind-day5").text(
+        "Wind: " + Math.round(data.list[39].wind.speed * 2.23694) + " MPH"
+      );
+      $("#humidity-day5").text(
+        "Humidity: " + data.list[39].main.humidity + "%"
       );
     });
 }
