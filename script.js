@@ -69,7 +69,7 @@ function getWeather(data) {
       $("#humidity").text("Humidity: " + data.list[0].main.humidity + "%");
 
       // 5-day weather
-      $("#5-day").text("5 Day Forecast");
+      $("#five-day").text("5 Day Forecast");
 
       // day 1
       console.log(data.list[8].weather[0].main);

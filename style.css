@@ -1,0 +1,77 @@
+* {
+  color: blue;
+}
+
+html {
+  font-size: 100%;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+h2,
+h3 {
+  color: black;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-section {
+  border-style: solid;
+  border: black;
+  text-align: center;
+  /* background-color: white; */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+button {
+  color: white;
+  border: none;
+  background: blue;
+  font-size: 19px;
+  padding: 5px;
+}
+
+.current-weather-container {
+  padding: 15px;
+}
+
+.current-weather-card {
+  text-align: center;
+}
+
+#five-day {
+  text-align: center;
+  padding: 15px;
+}
+
+.day-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.day-card {
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .current-weather-container {
+    text-align: center;
+  }
+}
