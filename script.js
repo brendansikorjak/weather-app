@@ -3,7 +3,7 @@ function getCoordinates() {
   var limit = "1";
 
   fetch(
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       city +
       "&limit=" +
       limit +
