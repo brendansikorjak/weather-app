@@ -74,6 +74,7 @@ function getWeather(data) {
 
       // 5-day weather
       $("#five-day").text("5 Day Forecast");
+      console.log(dayjs().add(1, "day").format("M/D/YY"));
 
       // day 1
       console.log(data.list[8].weather[0].main);
