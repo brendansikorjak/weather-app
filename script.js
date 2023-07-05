@@ -40,7 +40,11 @@ function getWeather(data) {
 
       // current weather
       $("#city").text(
-        data.city.name + " " + dayjs(data.list[0].dt_text).format("M/D/YY")
+        data.city.name +
+          ", " +
+          data.city.country +
+          " " +
+          dayjs().format("M/D/YY")
       );
       console.log(data.list[0].weather[0].main);
       $("#weather").text(data.list[0].weather[0].main);
@@ -74,7 +78,7 @@ function getWeather(data) {
       // day 1
       console.log(data.list[8].weather[0].main);
       console.log(Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32));
-      $("#day1").text(dayjs(data.list[8].dt_txt).format("M/D/YY"));
+      $("#day1").text(dayjs().add(1, "day").format("M/D/YY"));
       $("#weather-day1").text(data.list[8].weather[0].main);
       $("#temp-day1").text(
         "Temp: " +
@@ -96,7 +100,7 @@ function getWeather(data) {
       console.log(
         Math.round(((data.list[16].main.temp - 273.15) * 9) / 5 + 32)
       );
-      $("#day2").text(dayjs(data.list[16].dt_txt).format("M/D/YY"));
+      $("#day2").text(dayjs().add(2, "day").format("M/D/YY"));
       $("#weather-day2").text(data.list[16].weather[0].main);
       $("#temp-day2").text(
         "Temp: " +
@@ -120,7 +124,7 @@ function getWeather(data) {
       console.log(
         Math.round(((data.list[24].main.temp - 273.15) * 9) / 5 + 32)
       );
-      $("#day3").text(dayjs(data.list[24].dt_txt).format("M/D/YY"));
+      $("#day3").text(dayjs().add(3, "day").format("M/D/YY"));
       $("#weather-day3").text(data.list[24].weather[0].main);
       $("#temp-day3").text(
         "Temp: " +
@@ -144,7 +148,7 @@ function getWeather(data) {
       console.log(
         Math.round(((data.list[32].main.temp - 273.15) * 9) / 5 + 32)
       );
-      $("#day4").text(dayjs(data.list[32].dt_txt).format("M/D/YY"));
+      $("#day4").text(dayjs().add(4, "day").format("M/D/YY"));
       $("#weather-day4").text(data.list[32].weather[0].main);
       $("#temp-day4").text(
         "Temp: " +
@@ -168,7 +172,7 @@ function getWeather(data) {
       console.log(
         Math.round(((data.list[39].main.temp - 273.15) * 9) / 5 + 32)
       );
-      $("#day5").text(dayjs(data.list[39].dt_txt).format("M/D/YY"));
+      $("#day5").text(dayjs().add(5, "day").format("M/D/YY"));
       $("#weather-day5").text(data.list[39].weather[0].main);
       $("#temp-day5").text(
         "Temp: " +
