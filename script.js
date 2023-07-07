@@ -18,6 +18,10 @@ function getCoordinates() {
       console.log(data[0].lat);
       console.log(data[0].lon);
       getWeather(data);
+      // prints searched city
+      $("#city").text(
+        data[0].name + ", " + data[0].country + " " + dayjs().format("M/D/YY")
+      );
     });
 }
 
@@ -39,13 +43,6 @@ function getWeather(data) {
       console.log(data);
 
       // current weather
-      $("#city").text(
-        data.city.name +
-          ", " +
-          data.city.country +
-          " " +
-          dayjs().format("M/D/YY")
-      );
       console.log(data.list[0].weather[0].main);
       $("#weather").text(data.list[0].weather[0].main);
       // kelvin -> fahrenheit
