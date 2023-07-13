@@ -1,3 +1,16 @@
+var currentIcon = document.getElementById("current-icon");
+currentIcon.style.display = "none";
+var iconDay1 = document.getElementById("icon-day1");
+iconDay1.style.display = "none";
+var iconDay2 = document.getElementById("icon-day2");
+iconDay2.style.display = "none";
+var iconDay3 = document.getElementById("icon-day3");
+iconDay3.style.display = "none";
+var iconDay4 = document.getElementById("icon-day4");
+iconDay4.style.display = "none";
+var iconDay5 = document.getElementById("icon-day5");
+iconDay5.style.display = "none";
+
 function getCoordinates() {
   var city = $("#input-text-area").val();
   var limit = "1";
@@ -45,6 +58,14 @@ function getWeather(data) {
       // current weather
       console.log(data.list[0].weather[0].main);
       $("#weather").text(data.list[0].weather[0].main);
+      // weather icon
+      $("#current-icon").attr(
+        "src",
+        "http://openweathermap.org/img/w/" +
+          data.list[0].weather[0].icon +
+          ".png"
+      );
+      currentIcon.style.display = "";
       // kelvin -> fahrenheit
       console.log(Math.round(((data.list[0].main.temp - 273.15) * 9) / 5 + 32));
       $("#temp").text(
@@ -78,6 +99,13 @@ function getWeather(data) {
       console.log(Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32));
       $("#day1").text(dayjs().add(1, "day").format("M/D/YY"));
       $("#weather-day1").text(data.list[8].weather[0].main);
+      $("#icon-day1").attr(
+        "src",
+        "http://openweathermap.org/img/w/" +
+          data.list[8].weather[0].icon +
+          ".png"
+      );
+      iconDay1.style.display = "";
       $("#temp-day1").text(
         "Temp: " +
           Math.round(((data.list[8].main.temp - 273.15) * 9) / 5 + 32) +
@@ -100,6 +128,13 @@ function getWeather(data) {
       );
       $("#day2").text(dayjs().add(2, "day").format("M/D/YY"));
       $("#weather-day2").text(data.list[16].weather[0].main);
+      $("#icon-day2").attr(
+        "src",
+        "http://openweathermap.org/img/w/" +
+          data.list[16].weather[0].icon +
+          ".png"
+      );
+      iconDay2.style.display = "";
       $("#temp-day2").text(
         "Temp: " +
           Math.round(((data.list[16].main.temp - 273.15) * 9) / 5 + 32) +
@@ -124,6 +159,13 @@ function getWeather(data) {
       );
       $("#day3").text(dayjs().add(3, "day").format("M/D/YY"));
       $("#weather-day3").text(data.list[24].weather[0].main);
+      $("#icon-day3").attr(
+        "src",
+        "http://openweathermap.org/img/w/" +
+          data.list[24].weather[0].icon +
+          ".png"
+      );
+      iconDay3.style.display = "";
       $("#temp-day3").text(
         "Temp: " +
           Math.round(((data.list[24].main.temp - 273.15) * 9) / 5 + 32) +
@@ -148,6 +190,13 @@ function getWeather(data) {
       );
       $("#day4").text(dayjs().add(4, "day").format("M/D/YY"));
       $("#weather-day4").text(data.list[32].weather[0].main);
+      $("#icon-day4").attr(
+        "src",
+        "http://openweathermap.org/img/w/" +
+          data.list[32].weather[0].icon +
+          ".png"
+      );
+      iconDay4.style.display = "";
       $("#temp-day4").text(
         "Temp: " +
           Math.round(((data.list[32].main.temp - 273.15) * 9) / 5 + 32) +
@@ -172,6 +221,13 @@ function getWeather(data) {
       );
       $("#day5").text(dayjs().add(5, "day").format("M/D/YY"));
       $("#weather-day5").text(data.list[39].weather[0].main);
+      $("#icon-day5").attr(
+        "src",
+        "http://openweathermap.org/img/w/" +
+          data.list[39].weather[0].icon +
+          ".png"
+      );
+      iconDay5.style.display = "";
       $("#temp-day5").text(
         "Temp: " +
           Math.round(((data.list[39].main.temp - 273.15) * 9) / 5 + 32) +
