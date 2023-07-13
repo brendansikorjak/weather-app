@@ -10,6 +10,7 @@ var iconDay4 = document.getElementById("icon-day4");
 iconDay4.style.display = "none";
 var iconDay5 = document.getElementById("icon-day5");
 iconDay5.style.display = "none";
+var fiveDaySec = document.getElementById("five-day-section");
 
 function getCoordinates() {
   var city = $("#input-text-area").val();
@@ -244,5 +245,6 @@ function getWeather(data) {
       $("#humidity-day5").text(
         "Humidity: " + data.list[39].main.humidity + "%"
       );
+      fiveDaySec.style.backgroundColor = "aqua";
     });
 }

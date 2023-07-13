@@ -9,6 +9,7 @@ html {
 header {
   text-align: center;
   padding: 20px;
+  background-color: aqua;
 }
 
 h2,
@@ -47,6 +48,7 @@ button {
 
 .current-weather-container {
   padding: 15px;
+  background-color: white;
 }
 
 .current-weather-card {
